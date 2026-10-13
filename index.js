@@ -28,6 +28,16 @@ function canCastSpell(isSpellPrepared, hasScroll) {
  */
 function isHidden(hiding, aware) {
   // TODO
+  if (aware) {
+    console.log("You have been spotted.");
+    return false;
+  } else if (hiding) {
+    console.log("You are hidden.");
+    return true;
+  } else {
+    console.log("You are not hiding.");
+    return false;
+  }
 }
 
 /**
