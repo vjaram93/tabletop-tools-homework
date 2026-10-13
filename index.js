@@ -219,4 +219,16 @@ function canSee(light, vision) {
  */
 function getStrikeDamage(attack, ac, damage) {
   // TODO
+  const CRIT_THRESHOLD = 10;
+  let critDamage = damage * 2;
+
+  if (attack < ac) {
+    console.log("No damage is dealt.");
+    return 0;
+  } else if (attack >= CRIT_THRESHOLD + ac) {
+    console.log("Critical Hit!");
+    return critDamage;
+  } else if (attack > ac) {
+    return damage;
+  }
 }
