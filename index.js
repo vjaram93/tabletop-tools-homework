@@ -67,6 +67,14 @@ function doesStrikeHit(attack, ac) {
  */
 function doesStrikeCrit(attack, ac) {
   // TODO
+  const CRIT_THRESHOLD = 10;
+  if (attack >= CRIT_THRESHOLD + ac) {
+    console.log("You crit!");
+    return true;
+  } else {
+    console.log("No crit.");
+    return false;
+  }
 }
 
 /**
