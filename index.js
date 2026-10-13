@@ -87,6 +87,9 @@ function doesStrikeCrit(attack, ac) {
  */
 function heal(maxHp, currentHp, healAmount) {
   // TODO
+  let healedHP = Math.min(currentHp + healAmount, maxHp);
+  return `You healed to ${healedHP} HP.`;
+  // return Math.min(currentHp + healAmount, maxHp); <-- returns just the number. :)
 }
 
 /**
@@ -107,6 +110,23 @@ function heal(maxHp, currentHp, healAmount) {
  */
 function getProficiencyBonus(level, rank) {
   // TODO
+  const UNTRAINED_BONUS = 0;
+  const TRAINED_BONUS = 2;
+  const EXPERT_BONUS = 4;
+  const MASTER_BONUS = 6;
+  const LEGENDARY_BONUS = 8;
+
+  if (rank === "untrained") {
+    return level + UNTRAINED_BONUS;
+  } else if (rank === "trained") {
+    return level + TRAINED_BONUS;
+  } else if (rank === "expert") {
+    return level + EXPERT_BONUS;
+  } else if (rank === "master") {
+    return level + MASTER_BONUS;
+  } else if (rank === "legendary") {
+    return level + LEGENDARY_BONUS;
+  }
 }
 
 /**
