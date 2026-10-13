@@ -7,6 +7,16 @@
  */
 function canCastSpell(isSpellPrepared, hasScroll) {
   // TODO
+  if (isSpellPrepared) {
+    console.log("Spell is casted.");
+    return true;
+  } else if (hasScroll) {
+    console.log("Spell is casted.");
+    return true;
+  } else {
+    console.log("Spell is not prepared.");
+    return false;
+  }
 }
 
 /**
