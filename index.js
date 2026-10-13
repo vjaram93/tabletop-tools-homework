@@ -49,6 +49,13 @@ function isHidden(hiding, aware) {
  */
 function doesStrikeHit(attack, ac) {
   // TODO
+  if (attack >= ac) {
+    console.log("You hit!");
+    return true;
+  } else if (attack < ac) {
+    console.log("You missed.");
+    return false;
+  }
 }
 
 /**
