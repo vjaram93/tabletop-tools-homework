@@ -141,6 +141,16 @@ function getProficiencyBonus(level, rank) {
  */
 function getCoverBonus(behindObstacle, takingCover) {
   // TODO
+  if (takingCover) {
+    console.log("+4 to AC");
+    return 4;
+  } else if (behindObstacle) {
+    console.log("+2 to AC");
+    return 2;
+  } else {
+    console.log("No bonus to AC");
+    return 0;
+  }
 }
 
 /**
@@ -157,6 +167,15 @@ function getCoverBonus(behindObstacle, takingCover) {
  */
 function getRemainingHp(maxHp, currentHp, damage) {
   // TODO
+  let doubleHp = maxHp * 2;
+
+  if (damage >= doubleHp) {
+    return -1;
+  } else if (currentHp - damage < 0 && damage < doubleHp) {
+    return 0;
+  } else {
+    return currentHp - damage;
+  }
 }
 
 /**
